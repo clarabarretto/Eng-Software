@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    background-color: white;
+    font-family: Verdana, arial sans-serif;
+    color: black;
+}
+
+img {
+    margin-left: 17%;
+}
+
+nav {
+    display: inline;
+    margin-top: 35px;
+    float: right;
+    margin-right: 25%;
+}
+
+li {
+    display: inline-block;
+    text-align: center;
+    margin-left: 45px;
+    font-size: 16px;
+}
+
+header {
+    padding-top: 2.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #7DD856;
+}
+
+a:active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #7DD856;
+}
+
