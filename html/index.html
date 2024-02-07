@@ -23,11 +23,12 @@
                 <h2>Login</h2>
             </div>
 
-            <form action="#" method="#"></form>
+            <form id="LoginForm" onsubmit="return salvarInformacoes()">
+
                 <div class="container-login">
-                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" autocomplete="on" required>
             
-                    <input type="senha" id="senha" name="senha" placeholder="Senha" required>
+                    <input type="senha" id="senha" name="senha" placeholder="Senha" autocomplete="on" required>
 
                 </div>
                 
@@ -35,7 +36,6 @@
                     <button type="submit">Entrar</button>
                 </div>
                 
-
             </form>
 
         </section>
@@ -44,6 +44,23 @@
     <footer>
         
     </footer>
+
+    <script>
+
+        function salvarInformacoes() {
+            var email = document.getElementById("email");
+            var senha = document.getElementById("senha");
+
+            console.log(email)
+            console.log(senha)
+
+            window.location.href = "/html/inicio.html";
+
+            return false
+        }
+    </script>
+
+
     
 </body>
 </html>
