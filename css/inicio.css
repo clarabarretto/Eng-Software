@@ -26,3 +26,91 @@
     margin: 0 auto;
     position: relative;
 }
+
+.media-atual {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    height: 50%;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.numero-media-atual {
+    display: flex;
+    flex-direction: row;
+    font-size: x-large;
+    font-weight: 520;
+}
+
+.texto-media-atual {
+    font-weight: 520;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 12px;
+    
+}
+
+.green-line {
+    height: 80%;
+    background-color: #7DD856;
+    width: 2px;
+    margin-top: 42px;
+}
+
+.notas-atuais {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 49%;
+}
+
+.skills-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.skills-nota {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+.skills-nota p{
+    font-size: 14px;
+}
+
+.hard-skill {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#nota-maxima-comparacao {
+    font-size: 10px;
+    height: 14px;
+    margin-top: 14px;
+    margin-right: 8px;
+}
+
+.text-skills {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#star-skills {
+    max-width: 12px;
+}
