@@ -16,11 +16,12 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.barra-verde:hover {
     border-bottom: 2px solid #7DD856;
     padding-bottom: 4px;
 }
-a:active {
+
+.barra-verde:active {
     border-bottom: 2px solid #7DD856;
 }
 
