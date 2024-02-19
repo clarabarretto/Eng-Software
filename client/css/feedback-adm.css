@@ -1,0 +1,85 @@
+.info-header-feedback {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.texto-inicial {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.info-formulario {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.hard-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 200px;
+}
+
+.soft-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 200px;
+}
+
+.card-form {
+    border: 1px solid #7DD856;
+    border-radius: 12px;
+    
+}
+.form-hard-skills {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.gap-div {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.container-button {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#submitBtn {
+    background-color: #7DD856; /* Fundo verde */
+    color: black; /* Cor de letra preta */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px; /* Bordas arredondadas */
+    cursor: pointer;
+}
+
+#submitBtn:hover {
+    background-color: #4cae51; /* Altera a cor de fundo no hover */
+}
