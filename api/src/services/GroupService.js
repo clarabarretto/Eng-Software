@@ -1,3 +1,5 @@
+import { literal } from 'sequelize';
+
 import Group from '../models/Group';
 
 class GroupService {
@@ -6,7 +8,7 @@ class GroupService {
             where: {
                ...filter
             },
-            attributes: ['id', 'name', 'email', 'is_admin']
+            attributes: ['id', 'name']
         };
     }
 
@@ -20,6 +22,30 @@ class GroupService {
         await Group.create(data);
 
         return true;
+    }
+
+    getLikeValue(value) {
+        return `%${(value || '').replace(/'/g, `${''}''`)}%`;
+    };
+
+    async list(filter) {
+        const queryOptions = {
+            where: {
+                is_deleted: false
+            },
+            attributes: ['id', 'name'],
+            replacements: filter.search_text ? { search_text: this.getLikeValue(filter.search_text) } : {}
+        };
+
+        if (filter.id.length) {
+            queryOptions.where.id = filter.id;
+        }
+
+        if (filter.search_text) {
+            queryOptions.where.name = literal('"Group"."name"ILIKE :search_text');
+        }
+
+        return Group.findAll(queryOptions);
     }
 
     async update({ filter, changes }) {

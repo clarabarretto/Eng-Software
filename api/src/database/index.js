@@ -1,10 +1,11 @@
 const Sequelize = require('sequelize');
 
 import User from '../models/User';
+import Group from '../models/Group';
 
 const databaseConfig = require('../config/database');
 
-const models = [User];
+const models = [User, Group];
 
 const connection = new Sequelize(databaseConfig);
 
