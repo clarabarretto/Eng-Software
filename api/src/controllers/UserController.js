@@ -8,6 +8,7 @@ class UserController extends BaseController {
 
         this.create = this.create.bind(this)
         this.find = this.find.bind(this)
+        this.list = this.list.bind(this)
         this.update = this.update.bind(this)
         this.delete = this.delete.bind(this)
     }
@@ -25,6 +26,16 @@ class UserController extends BaseController {
     async find(req, res) {
         try {
             const response = await UserService.find(req.filter);
+
+            return this.handleResponse(res, response);
+        } catch (error) {
+            return this.handleError(res, error)
+        }
+    }
+
+    async list(req, res) {
+        try {
+            const response = await UserService.list(req.filter);
 
             return this.handleResponse(res, response);
         } catch (error) {

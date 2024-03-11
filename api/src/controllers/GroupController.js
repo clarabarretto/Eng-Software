@@ -10,6 +10,7 @@ class GroupController extends BaseController {
         this.find = this.find.bind(this)
         this.update = this.update.bind(this)
         this.delete = this.delete.bind(this)
+        this.list = this.list.bind(this)
     }
 
     async create(req, res) {
@@ -25,6 +26,16 @@ class GroupController extends BaseController {
     async find(req, res) {
         try {
             const response = await GroupService.find(req.filter);
+
+            return this.handleResponse(res, response);
+        } catch (error) {
+            return this.handleError(res, error)
+        }
+    }
+
+    async list(req, res) {
+        try {
+            const response = await GroupService.list(req.filter);
 
             return this.handleResponse(res, response);
         } catch (error) {
