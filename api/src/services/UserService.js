@@ -24,11 +24,16 @@ class UserService {
     async list(filter) {
         const queryOptions = {
             where: {
-                is_deleted: filter.is_deleted
+                is_deleted: filter?.is_deleted || false
             },
             attributes: ['id', 'name'],
-            replacements: filter.search_text ? { search_text: this.getLikeValue(filter.search_text) } : {}
+            replacements: filter?.search_text ? { search_text: this.getLikeValue(filter.search_text) } : {}
         };
+
+        if (!filter) {
+            return User.findAll(queryOptions);
+        }
+
 
         if (filter.id.length) {
             queryOptions.where.id = filter.id;

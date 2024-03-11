@@ -33,7 +33,7 @@ const schema = {
         query: yup.object({
             id: yup.mixed().transform(value => Array.isArray(value) ? value : [].concat(value || [])).default([]).nullable(),
             search_text: yup.string().transform(sanitizeValue).nullable(),
-            is_deleted: yup.boolean().nullable().default(false),
+            is_deleted: yup.boolean().nullable().transform(value => !!value),
             email: yup.string().email().nullable()
         }).noUnknown()
     },
