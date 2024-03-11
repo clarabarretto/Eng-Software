@@ -1,8 +1,10 @@
-import Sequelize from 'sequelize';
+const Sequelize = require('sequelize');
 
-import databaseConfig from '../config/database';
+import User from '../models/User';
 
-const models = [];
+const databaseConfig = require('../config/database');
+
+const models = [User];
 
 const connection = new Sequelize(databaseConfig);
 
