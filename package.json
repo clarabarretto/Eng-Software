@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "web": "yarn workspace @skynexuiexamples/web"
   },
   "keywords": [],
   "author": "",
@@ -22,11 +23,6 @@
     "sucrase": "^3.35.0",
     "yup": "^1.3.3"
   },
-  
-  "scripts": {
-    "web": "yarn workspace @skynexuiexamples/web"
-  },
-  
   "devDependencies": {
     "sequelize-cli": "^6.6.2"
   }
