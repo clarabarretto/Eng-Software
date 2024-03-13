@@ -22,6 +22,15 @@
     "sucrase": "^3.35.0",
     "yup": "^1.3.3"
   },
+
+    "scripts": {
+    "web": "yarn workspace @skynexuiexamples/web",
+    "dev:web": "yarn web dev",
+    "build:web": "yarn web build",
+    "native": "yarn workspace @skynexuiexamples/native",
+    "dev:native": "yarn native start"
+  },
+  
   "devDependencies": {
     "sequelize-cli": "^6.6.2"
   }
