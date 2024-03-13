@@ -26,9 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: ls -la
-    - run: 
-          cd ./api
-          yarn install
-          yarn test
-          ls -la
-    
+    - run: cd ./api
+    - run: yarn install
+    - run: yarn test 
+    - run: ls -la
+          
