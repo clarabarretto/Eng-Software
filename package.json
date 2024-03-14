@@ -6,7 +6,6 @@
   "scripts": {
     "test": "ava",
     "dev": "nodemon server.js",
-    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
