@@ -1,5 +1,5 @@
 import test from "ava";
 
-test("Isso é um teste muito bom!", (t) => {
+test("Esso é um teste muito bom!", (t) => {
   t.pass();
 });
