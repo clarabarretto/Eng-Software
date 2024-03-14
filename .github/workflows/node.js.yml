@@ -20,4 +20,4 @@ jobs:
       with:
        node-version: 16.18
        
-    - run: npm ci
+    - run: ls -la
