@@ -1,0 +1,26 @@
+.table-header-item {
+    font-weight: bolder;
+    font-size: 18px;
+    text-align: center;
+    color: #456d39;
+}
+
+.div-every-feedback {
+    justify-content: center;
+    display: flex;
+    margin-top: 1vh;
+    text-align: center;
+
+}
+
+.table {
+    width: 75vw;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-radius: 12px;
+    justify-content: center;
+}

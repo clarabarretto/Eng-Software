@@ -1,0 +1,111 @@
+.login-background-image {
+    background-image: url("../content/img/login-background.png");
+    height: 95vh;
+    width: 50vw;
+}
+
+.mainDiv {
+    display: flex;
+}
+
+.login-form-container {
+    justify-content: center;
+    flex: 0.85;
+}
+
+.container-login {
+    display: flex;
+    background-color: white;
+
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    border-width: 5px;
+
+    height: 70vh;
+    width: 28vw;
+
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+
+    color: #456d38;
+    font-weight: bold;
+}
+
+#login-input {
+    border-width: 3px;
+    border-radius: 20px;
+    border-color: #456d38;
+
+    height: 5vh;
+}
+
+.login-btn {
+    margin-top: 50px;
+    background-color: #83ca55;
+
+    color: white;
+    font-weight: bold;
+
+    border-radius: 20px;
+}
+
+.login-btn:hover {
+    margin-top: 50px;
+    background-color: #456d38;
+    color: #ffff;
+    font-weight: bold;
+}
+
+.login-mainDiv {
+    height: 100vh;
+    display: flex;
+}
+
+.login-container-form-item {
+    margin-top: 10px;
+}
+
+.doxa-logo-container-login {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.doxa-logo {
+    width: 200px;
+    margin-bottom: 20px;
+    margin-top: -50px;
+}
+
+.header {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3vw;
+}
+
+.input-container {
+    border: 1px solid white;
+    border-radius: 0.25rem;
+    padding: 6px 8px;
+    justify-content: center;
+}
+
+.doxa-logo-header {
+    height: 12vh;
+    padding: 2vh;
+    padding-left: 1.5vw;
+}
+
+.buttons-header {
+    align-items: center;
+    display: flex;
+}
+
+.buttons-header-item {
+    margin-right: 5px;
+    text-align: center;
+}
