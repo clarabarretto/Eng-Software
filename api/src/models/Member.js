@@ -3,10 +3,6 @@ import Sequelize, { Model } from 'sequelize';
 export default class Member extends Model {
     static init(sequelize) {
         super.init({
-            is_admin: {
-                type: Sequelize.BOOLEAN,
-                defaultValue: false
-            }, 
             is_deleted: {
                 type: Sequelize.BOOLEAN,
                 defaultValue: false,
