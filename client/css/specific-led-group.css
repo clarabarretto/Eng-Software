@@ -1,0 +1,50 @@
+.my-group-div {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.my-group-main-card {
+    border-radius: 50px;
+    border-color: #83ca55;
+    border-style: solid;
+    border-width: 4px;
+
+    width: 60vw;
+    height: 60vh;
+}
+
+.led-group-name-main-card {
+    border-radius: 50px;
+    border-color: #83ca55;
+    border-style: solid;
+    border-width: 4px;
+
+    width: 20vw;
+    height: 30vh;
+}
+
+.groups-card-div {
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center
+}
+
+
+.card-text-title {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-top: 1vh;
+    margin-left: 2vw;
+
+    color: #456d39
+}
+
+.card-text-content {
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 1vh;
+    margin-left: 2vw;
+
+    color: #83ca55
+}

@@ -33,4 +33,28 @@ myApp.config(function ($stateProvider) {
             templateUrl: 'view/my-groups.html',
             controller: 'startPageController',
         })
+        .state({
+            name: 'led-groups',
+            url: '/led-groups',
+            templateUrl: 'view/led-groups.html',
+            controller: 'startPageController',
+        })
+        .state({
+            name: 'specific-led-group',
+            url: '/led-group',
+            templateUrl: 'view/specific-led-group.html',
+            controller: 'startPageController',
+        })
+        .state({
+            name: 'give-feedback',
+            url: '/user-feedback',
+            templateUrl: 'view/give-feedback.html',
+            controller: 'startPageController',
+        })
+        .state({
+            name: 'show-user',
+            url: '/show-user',
+            templateUrl: 'view/show-user.html',
+            controller: 'startPageController',
+        })
 })  

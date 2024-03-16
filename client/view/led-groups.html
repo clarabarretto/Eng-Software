@@ -1,0 +1,41 @@
+<div>
+    <header class="header">
+        <img class="doxa-logo-header" src="../content/doxa-logo.svg">
+        <div class="buttons-header">
+            <div class="dropdown">
+                <button
+                    style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;"
+                    class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Meus feedbacks
+                </button>
+                <ul style="border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                    class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" ui-sref="start-page">Feedback atual</a></li>
+                    <li><a class="dropdown-item" ui-sref="old-feedbacks">Feedback passado</a></li>
+                </ul>
+            </div>
+            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
+                style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
+            <button class="buttons-header-item form-control btn btn-primary"
+                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                ng-click="logOut()">Sair</button>
+        </div>
+    </header>
+    <h1 class="feedback-page-title">Meus grupos:</h1>
+    <div class="feedback-div">
+        <div class="feedback-main-card">
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="col-6 col-sm-4">testandooooooo</div>
+                <div class="col-6 col-sm-4">testandooooooo</div>
+                <!-- :GRID CHATO -->
+                <!-- Force as próximas colunas quebrarem, em uma nova linha, no breakpoint md ou maior -->
+                <div class="w-100 d-none d-md-block"></div>
+
+                <div class="col-6 col-sm-4">testandooooooo</div>
+                <div class="col-6 col-sm-4">testandooooooo</div>
+            </div>
+        </div>
+    </div>
+</div>
