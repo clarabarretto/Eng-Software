@@ -1,6 +1,8 @@
 import { literal } from 'sequelize';
 
 import Group from '../models/Group';
+import Member from '../models/Member';
+import User from '../models/User';
 
 class GroupService {
     getQueryOptions(filter) {
@@ -8,12 +10,31 @@ class GroupService {
             where: {
                ...filter
             },
-            attributes: ['id', 'name']
+            attributes: ['id', 'name'],
+            include: [{
+                model: Member,
+                required: false,
+                where: {
+                    is_deleted: false
+                },
+                attributes: ['id'],
+                as: 'members',
+                include: [{
+                    model: User,
+                    where: {
+                        is_deleted: false
+                    },
+                    required: false,
+                    attributes: ['id', 'name', 'email']
+                }]
+            }],
+            logging: true
         };
     }
 
     async find(filter) {
         const queryOptions = this.getQueryOptions(filter);
+        console.log(queryOptions, 'queryOptions');
 
         return Group.findOne(queryOptions);
     }

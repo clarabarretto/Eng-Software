@@ -16,4 +16,19 @@ export default class Group extends Model {
             sequelize
         });
     }
+
+    static associate(models) {
+        this.hasMany(models.Feedback, { 
+            foreignKey: 'group_id',
+            as: 'feedbacks'
+        });
+        this.hasMany(models.Member, { 
+            foreignKey: 'group_id',
+            as: 'members'
+        });
+        this.belongsTo(models.User, { 
+            as: 'admin',
+            foreignKey: 'admin_id' 
+        });
+    }
 }

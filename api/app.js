@@ -8,6 +8,7 @@ import express from 'express';
 
 import UserRoutes from './src/routes/UserRoutes';
 import GroupRoutes from './src/routes/GroupRoute';
+import MemberRoutes from './src/routes/MemberRoute';
 
 env.config();
 
@@ -30,6 +31,7 @@ class App {
     routes() {
         this.app.use('/users', UserRoutes.setup());
         this.app.use('/groups', GroupRoutes.setup());
+        this.app.use('/members', MemberRoutes.setup());
     }
     
     setup() {
