@@ -28,6 +28,6 @@ export default class Skill extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.feedback, { foreignKey: 'feedback_id' });
+        this.belongsTo(models.Feedback, { foreignKey: 'feedback_id' });
     }
 }

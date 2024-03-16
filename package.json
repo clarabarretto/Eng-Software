@@ -1,16 +1,17 @@
 {
-  "name": "api",
+  "name": "Eng-Software",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "test": "ava",
+    "dev": "nodemon server.js",
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ava": "^5.1.0"
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
