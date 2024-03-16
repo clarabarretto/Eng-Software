@@ -64,6 +64,22 @@ class UserService {
 
         return changes.is_deleted ? true : this.find(filter);
     }
+
+    async login({ email, password }) {
+        const user = await User.findOne({
+            where: {
+                email: email,
+                is_deleted: false
+            },
+            attributes: ['id', 'password_hash']
+        });
+
+        if (user && !(await user.passwordIsValid(password)) || !user) {
+            throw new Error('INVALID_PASSWORD');
+        }
+
+        return this.find({ id: user.id });
+    }
 }
 
 export default new UserService()

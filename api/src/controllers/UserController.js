@@ -11,6 +11,7 @@ class UserController extends BaseController {
         this.list = this.list.bind(this)
         this.update = this.update.bind(this)
         this.delete = this.delete.bind(this)
+        this.login = this.login.bind(this)
     }
 
     async create(req, res) {
@@ -75,6 +76,18 @@ class UserController extends BaseController {
             };
 
             const response = await UserService.update(options);
+
+            return this.handleResponse(res, response);
+        } catch (error) {
+            return this.handleError(res, error)
+        }
+    }
+
+    async login(req, res) {
+        try {
+            const filter = req.body;
+
+            const response = await UserService.login(filter);
 
             return this.handleResponse(res, response);
         } catch (error) {

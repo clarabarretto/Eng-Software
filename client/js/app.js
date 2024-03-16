@@ -1,8 +1,7 @@
 const myApp = angular.module("doxa", ['ui.router', 'ui.bootstrap']);
-const baseUrl = 'http://localhost:5001/'
+const baseUrl = 'http://localhost:3001'
 
 myApp.config(function ($stateProvider) {
-
     $stateProvider
         .state({
             name: 'login',
@@ -34,6 +33,4 @@ myApp.config(function ($stateProvider) {
             templateUrl: 'view/my-groups.html',
             controller: 'startPageController',
         })
-})
-
-console.log('myApp');
+})  
