@@ -1,5 +1,6 @@
 import { literal } from 'sequelize';
 import User from '../models/User';
+import Member from '../models/Member';
 
 class UserService {
     getQueryOptions(filter) {
@@ -71,11 +72,28 @@ class UserService {
                 email: email,
                 is_deleted: false
             },
-            attributes: ['id', 'password_hash']
+            attributes: ['id', 'password_hash', 'is_admin']
         });
 
         if (user && !(await user.passwordIsValid(password)) || !user) {
             throw new Error('INVALID_PASSWORD');
+        }
+
+        if (!user.is_admin) {
+            const member = await Member.findOne({
+                where: {
+                    user_id: user.id,
+                    is_deleted: false
+                },
+                attributes: ['group_id']
+            });
+
+            const parsedUser = await this.find({ id: user.id });
+
+            return {
+                ...parsedUser.toJSON(),
+                group_id: member.group_id
+            }
         }
 
         return this.find({ id: user.id });

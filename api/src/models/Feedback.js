@@ -11,6 +11,11 @@ export default class Feedback extends Model {
                 type: Sequelize.BOOLEAN,
                 defaultValue: false,
                 allowNull: false
+            },
+            is_active: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: false,
+                allowNull: false
             }
         }, {
             sequelize
@@ -20,10 +25,10 @@ export default class Feedback extends Model {
     }
 
     static associate(models) {
-        this.hasOne(models.User, { foreignKey: 'user_id' });
+        this.belongsTo(models.User, { foreignKey: 'user_id' });
         this.belongsTo(models.Group, { foreignKey: 'group_id' });
         this.hasMany(models.Skill, { 
-            foreignKey: 'skill_id',
+            foreignKey: 'feedback_id',
             as: 'skills'
         });
     }

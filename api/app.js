@@ -9,6 +9,7 @@ import cors from 'cors';
 import UserRoutes from './src/routes/UserRoutes';
 import GroupRoutes from './src/routes/GroupRoute';
 import MemberRoutes from './src/routes/MemberRoute';
+import FeedbackRoutes from './src/routes/FeedbackRoute';
 
 env.config();
 
@@ -31,6 +32,7 @@ class App {
         this.app.use('/users', UserRoutes.setup());
         this.app.use('/groups', GroupRoutes.setup());
         this.app.use('/members', MemberRoutes.setup());
+        this.app.use('/feedbacks', FeedbackRoutes.setup());
     }
     
     setup() {
