@@ -25,8 +25,9 @@ const schema = {
         }).noUnknown()
     },
     find: {
-        params: yup.object({
-            id: yup.number().min(1).required()
+        body: yup.object({
+            id: yup.number().min(1).nullable(),
+            email: yup.string().email().nullable()
         }).noUnknown()
     },
     list: {

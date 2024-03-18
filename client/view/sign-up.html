@@ -1,11 +1,16 @@
 <div class="mainDiv">
-    <div class="container-login" style="margin-top: 10vh;">
+    <div class="container-login" style="margin-top: 10vh; height: 80vh !important;">
         <div class="login-form-container">
             <div class="doxa-logo-container-login">
                 <img class="doxa-logo" src="../content/doxa-logo.svg">
             </div>
-            <pre>{{user | json}}</pre>
             <form class="form-login">
+                <div class="login-container-form-item">
+                    <label for="name">Nome</label>
+                    <input class="form-control" type="text" ng-model="user.name" ng-required="true" ng-minlength="10"
+                        placeholder=""
+                        style=" border-width: 3px; border-radius: 20px; border-color: #456d38; height: 5vh;" />
+                </div>
                 <div class="login-container-form-item">
                     <label for="email">E-mail</label>
                     <input class="form-control" type="text" ng-model="user.email" ng-required="true" ng-minlength="10"
@@ -25,13 +30,13 @@
                         style=" border-width: 3px; border-radius: 20px; border-color: #456d38; height: 5vh;" />
                 </div>
                 <div class="form-check" style="margin-top: 2vh;">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1" ng-click="() => user.is_admin = !user.is_admin" ng-model="user.is_admin" ng-value="user.is_admin">
                     <label class="form-check-label" for="flexRadioDefault1">
                         Sou administrador
                     </label>
                 </div>
                 <div>
-                    <button class="btn btn-block login-btn" ng-click="login()"
+                    <button class="btn btn-block login-btn" ng-click="signUp()"
                         ng-disabled="!user.email || !user.password">Cadastrar</button>
                 </div>
             </form>

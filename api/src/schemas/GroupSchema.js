@@ -18,7 +18,8 @@ const sanitizeValue = value => {
 const schema = {
     create: {
         body: yup.object({
-            name: yup.string().required()
+            name: yup.string().required(),
+            admin_id: yup.number().min(1).required()
         }).noUnknown()
     },
     find: {
@@ -27,10 +28,9 @@ const schema = {
         }).noUnknown()
     },
     list: {
-        query: yup.object({
-            id: yup.mixed().transform(value => Array.isArray(value) ? value : [].concat(value || [])).default([]).nullable(),
-            search_text: yup.string().transform(sanitizeValue).nullable()
-        }).noUnknown()
+        params: yup.object({
+            user_id: yup.number().min(1).required()
+        }).noUnknown(),
     },
     update: {
         params: yup.object({

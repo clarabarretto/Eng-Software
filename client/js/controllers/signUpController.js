@@ -1,5 +1,6 @@
 myApp.controller('signUpController', function ($scope, $state, UserService, AlertMessage) {
     $scope.user = {
+        name: '',
         email: '',
         password: '',
         password_confirmation: '',
@@ -17,15 +18,21 @@ myApp.controller('signUpController', function ($scope, $state, UserService, Aler
             return false;
         }
 
+        if (!$scope.user.name) {
+            AlertMessage.error('Nome é obrigatório');
+            return false;
+        }
+
         return true;
     };
 
-    const createUser = () => {
+    const signUp = () => {
         if (!isValidUser()) {
             return;
         }
 
         const data = {
+            name: $scope.user.name,
             email: $scope.user.email,
             password: $scope.user.password,
             is_admin: $scope.user.is_admin
@@ -36,9 +43,9 @@ myApp.controller('signUpController', function ($scope, $state, UserService, Aler
                 AlertMessage.success('Usuário criado com sucesso');
                 $state.go('login');
             }).catch(() => {
-                AlertMessage.error('Erro ao listar feedback atual');
+                AlertMessage.error('Erro ao criar o usuário');
             })
     };
 
-    $scope.createUser = createUser;
+    $scope.signUp = signUp;
 });

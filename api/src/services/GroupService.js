@@ -1,8 +1,9 @@
 import { literal } from 'sequelize';
 
-import Group from '../models/Group.js';
-import Member from '../models/Member.js';
-import User from '../models/User.js';
+import Group from '../models/Group';
+import Member from '../models/Member';
+import User from '../models/User';
+import Feedback from '../models/Feedback';
 
 class GroupService {
     getQueryOptions(filter) {
@@ -58,33 +59,56 @@ class GroupService {
     async list(filter) {
         const queryOptions = {
             where: {
+                admin_id: filter.user_id,
                 is_deleted: false
             },
-            attributes: ['id', 'name'],
-            replacements: filter.search_text ? { search_text: this.getLikeValue(filter.search_text) } : {}
+            attributes: ['id', 'name']
         };
-
-        if (filter.id.length) {
-            queryOptions.where.id = filter.id;
-        }
-
-        if (filter.search_text) {
-            queryOptions.where.name = literal('"Group"."name"ILIKE :search_text');
-        }
 
         return Group.findAll(queryOptions);
     }
 
     async update({ filter, changes }) {
-        const queryOptions = this.getQueryOptions(filter);
-
-        const group = await this.find(filter);
+        const group = await this.find({ id: filter.id, is_deleted: false });
 
         if (!group) {
             throw new Error('NOT_FOUND');
         }
 
-        await Group.update(changes, queryOptions);
+        const transaction = await Group.sequelize.transaction();
+
+        try {
+            const promises = [
+                Group.update(changes, {
+                    where: {
+                        id: filter.id,
+                        is_deleted: false
+                    },
+                    transaction
+                }),
+                Member.update(changes, {
+                    where: {
+                        group_id: filter.id,
+                        is_deleted: false
+                    },
+                    transaction
+                }),
+                Feedback.update(changes, {
+                    where:{
+                        group_id: filter.id,
+                        is_deleted: false
+                    },
+                    transaction
+                })
+            ];
+
+            await Promise.all(promises);
+
+            await transaction.commit();
+        } catch (error) {
+            await transaction.rollback();
+            throw error;
+        }
 
         return changes.is_deleted ? true : this.find(filter);
     }

@@ -3,22 +3,8 @@
         <img class="doxa-logo-header" src="../content/doxa-logo.svg">
         <div class="buttons-header">
             <div class="dropdown">
-                <button
-                    style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;"
-                    class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Meus feedbacks
-                </button>
-                <ul style="border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
-                    class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" ui-sref="start-page">Feedback atual</a></li>
-                    <li><a class="dropdown-item" ui-sref="old-feedbacks">Feedback passado</a></li>
-                </ul>
-            </div>
-            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
-                style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
             <button class="buttons-header-item form-control btn btn-primary"
-                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                class="buttons-header-item  form-control btn btn-outline-light"
                 style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
                 ng-click="logOut()">Sair</button>
         </div>
@@ -30,46 +16,48 @@
                 <div class="card-content" style="display: flex; flex-direction: column;">
                     <div>
                         <h1 class="card-text-title"> Grupo: </h1>
-                        <h4 class="card-text-content">BLA</h4>
+                        <h4 class="card-text-content">{{ group.name }}</h4>
                     </div>
                     <div>
                         <h1 class="card-text-title">Lider:</h1>
-                        <h4 class="card-text-content">BLA BLA</h1>
+                        <h4 class="card-text-content">{{ group.admin.name }}</h1>
                     </div>
                 </div>
             </div>
-            <button class="form-control btn btn-outline-light" ui-sref="comparative"
+            <button class="form-control btn btn-outline-light" ui-sref="add-user"
                 style="background-color: #84ca5557; border-radius: 20px; border-width: 3px; border-color: #83ca55;color:#84ca55; font-weight: bold;width: 15vw; margin-top: 15vh;">
                 Adicionar usuário</button>
-            <button class=" form-control btn btn-outline-light" ui-sref="login"
+            <button class=" form-control btn btn-outline-light"
+                style=" border-radius: 20px; border-color: red; border-width: 2px; color: red; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 15vw; margin-top: 2vh; text-align: center;"
+                ng-click="deleteGroup()"
+                >Apagar grupo</button>
+            <button class=" form-control btn btn-outline-light"
                 style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 15vw; margin-top: 2vh; text-align: center;"
-                ng-click="logOut()">Apagar grupo</button>
+                ng-click="goBackToLedGroups()">
+                Voltar</button>
         </div>
         <div class="my-group-main-card">
             <div class="card-content">
                 <div class="old-feedbacks-card-content">
-                    <div class="div-every-feedback" style="display: flex; flex-direction: column;">
+                    <div style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;" ng-hide="group.members.length">
+                        <p style="font-size: 20px; color: #456d39;">Nenhum usuário adcionado ao grupo</p>
+                    </div>
+                    <div class="div-every-feedback" style="display: flex; flex-direction: column;" ng-show="group.members.length">
                         <table class="table table-bordered" style="margin-top: 2vh; width: 50vw;">
                             <tr>
                                 <th class="table-header-item" style="font-weight: bold; font-size: 15px;color: #456d39">
                                     Integrante</th>
                                 <th class="table-header-item" style="font-weight: bold; font-size: 15px;color: #456d39">
-                                    último feedback</th>
-                                <th class="table-header-item" style="font-weight: bold; font-size: 15px;color: #456d39">
 
                                 </th>
                             </tr>
-                            <tr>
+                            <tr ng-repeat="member in group.members">
                                 <td class="td-item"
-                                    style="font-weight: 500; font-size: 15px;color: #456d39; text-align: center;">
-                                    Nome 123
+                                    style="font-weight: 500; font-size: 15px;color: #456d39; text-align: center;" ng-click="giveFeedback(member.User)">
+                                        {{ member.User.name }}
                                 </td>
                                 <td class="td-item"
-                                    style="font-weight: 500; font-size: 15px;color: #456d39; text-align: center;">
-                                    10/10/10
-                                </td>
-                                <td class="td-item"
-                                    style="font-weight: 500; font-size: 15px;color: #456d39; text-align: center;">
+                                    style="font-weight: 500; font-size: 15px;color: #456d39; text-align: center; cursor: pointer;" ng-click="removeMember(member.id)">
                                     Remover usuário
                                 </td>
                             </tr>

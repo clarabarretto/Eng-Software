@@ -1,9 +1,10 @@
 myApp.controller('groupController', function ($scope, $state, GroupService, AlertMessage) {
     $scope.is_admin = localStorage.getItem('is_admin');
-    const getGroupInfo = () => {
-        const userId = localStorage.getItem('user_id');
 
-        return GroupService.find(userId)
+    const getGroupInfo = () => {
+        const groupId = localStorage.getItem('group_id');
+
+        return GroupService.find(groupId)
             .then(resp => {
                 $scope.group = resp.data;
             }).catch(() => {

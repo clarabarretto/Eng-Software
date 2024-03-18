@@ -10,6 +10,10 @@ myApp.controller('startPageController', function ($scope, $state, FeedbackServic
             .then(resp => {
                 $scope.feedback = resp.data;
 
+                if(!$scope.feedback) {
+                    return;
+                }
+
                 $scope.skills = resp.data.skills.reduce((acc, skill) => {
                     if (skill.type === 'SOFT') {
                         acc.soft.push(skill)
@@ -22,8 +26,6 @@ myApp.controller('startPageController', function ($scope, $state, FeedbackServic
                     soft: [],
                     hard: []
                 });
-
-
             }).catch(() => {
                 AlertMessage.error('Erro ao listar feedback atual');
             })

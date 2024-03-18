@@ -3,22 +3,8 @@
         <img class="doxa-logo-header" src="../content/doxa-logo.svg">
         <div class="buttons-header">
             <div class="dropdown">
-                <button
-                    style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;"
-                    class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Meus feedbacks
-                </button>
-                <ul style="border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
-                    class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" ui-sref="start-page">Feedback atual</a></li>
-                    <li><a class="dropdown-item" ui-sref="old-feedbacks">Feedback passado</a></li>
-                </ul>
-            </div>
-            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
-                style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
             <button class="buttons-header-item form-control btn btn-primary"
-                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                class="buttons-header-item  form-control btn btn-outline-light"
                 style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
                 ng-click="logOut()">Sair</button>
         </div>
@@ -27,8 +13,8 @@
         <div class="feedback-main-card">
             <div class="card-content" style="flex-direction: column;">
                 <div style="display: flex;flex-direction: column;align-items: center; margin-bottom: 3vh;">
-                    <h1 class="card-text-content">Integrante:</h1>
-                    <h1 class="card-text-content">Grupo:</h1>
+                    <h1 class="card-text-content">Integrante: {{ info.user_name }}</h1>
+                    <h1 class="card-text-content">Grupo: {{ info.group_name }}</h1>
                 </div>
                 <div style="display: contents;">
                     <div style=" display: flex; 
@@ -37,63 +23,99 @@
                         justify-content: center;
                         align-items: center;">
                         <div class="skills-type-card" style="height: 30vh;">
-                            <h3 class="texto-media-atual">Hard Skills</h3>
+                            <h3 class="texto-media-atual">Soft Skills</h3>
                             <div class="skills-nota">
-                                <p>Skill 1:</p>
+                                <div class="text-skills">
+                                    <input
+                                        placeholder="Soft skill"
+                                        style="border-radius: 8px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:start; border-style: solid; margin-right: 8px;"
+                                        type="text" ng-model="data.skills.soft1.title">
+                                </div>
                                 <div class="text-skills">
                                     <input
                                         style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
-                                        type="text" value="0.00">
+                                        type="number" ng-max="5" ng-model="data.skills.soft1.score">
                                 </div>
                             </div>
                             <div class="skills-nota">
-                                <p>Skill 2:</p>
+                                <div class="text-skills">
+                                    <input
+                                        placeholder="Soft skill"
+                                        style="border-radius: 8px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:start; border-style: solid; margin-right: 8px;"
+                                        type="text" ng-model="data.skills.soft2.title">
+                                </div>
                                 <div class="text-skills">
                                     <input
                                         style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
-                                        type="text" value="0.00">
+                                        type="number" ng-max="5" ng-model="data.skills.soft2.score">
                                 </div>
                             </div>
                             <div class="skills-nota">
-                                <p>Skill 3:</p>
+                                <div class="text-skills">
+                                    <input
+                                        placeholder="Soft skill"
+                                        style="border-radius: 8px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:start; border-style: solid; margin-right: 8px;"
+                                        type="text" ng-model="data.skills.soft3.title">
+                                </div>
                                 <div class="text-skills">
                                     <input
                                         style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
-                                        type="text" value="0.00">
+                                        type="number" ng-max="5" ng-model="data.skills.soft3.score">
                                 </div>
                             </div>
                         </div>
                         <div class="skills-type-card" style="height: 30vh;">
-                            <h3 class="texto-media-atual">Soft Skills</h3>
+                            <h3 class="texto-media-atual">Hard Skills</h3>
+
                             <div class="skills-nota">
-                                <p>Skill 1:</p>
+                                <div class="text-skills">
+                                    <input
+                                        placeholder="Hard skill"
+                                        style="border-radius: 8px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:start; border-style: solid; margin-right: 8px;"
+                                        type="text" ng-model="data.skills.hard1.title">
+                                </div>
                                 <div class="text-skills">
                                     <input
                                         style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
-                                        type="text" value="0.00">
+                                        type="number" ng-max="5" ng-model="data.skills.hard1.score">
                                 </div>
                             </div>
                             <div class="skills-nota">
-                                <p>Skill 2:</p>
+                                <div class="text-skills">
+                                    <input
+                                        placeholder="Hard skill"
+                                        style="border-radius: 8px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:start; border-style: solid; margin-right: 8px;"
+                                        type="text" ng-model="data.skills.hard2.title">
+                                </div>
                                 <div class="text-skills">
                                     <input
                                         style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
-                                        type="text" value="0.00">
+                                        type="number" ng-max="5" ng-model="data.skills.hard2.score">
                                 </div>
                             </div>
                             <div class="skills-nota">
-                                <p>Skill 3:</p>
+                                <div class="text-skills">
+                                    <input
+                                        placeholder="Hard skill"
+                                        style="border-radius: 8px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:start; border-style: solid; margin-right: 8px;"
+                                        type="text" ng-model="data.skills.hard3.title">
+                                </div>
                                 <div class="text-skills">
                                     <input
                                         style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
-                                        type="text" value="0.00">
+                                        type="number" ng-max="5" ng-model="data.skills.hard3.score">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                    <button class="buttons-header-item  form-control btn btn-outline-light"
                         style=" border-radius: 20px;background-color: #84ca555d; border-color: #83ca55; border-width: 2px; color: #456d39; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 10vw; margin-top: 4.5vh; margin-bottom: 2vh; align-self: center;"
-                        ng-click="logOut()">Confirmar</button>
+                        ng-click="createFeedBack()">Confirmar
+                    </button>
+                    <button class="buttons-header-item  form-control btn btn-outline-light" ng-click="goBackToLedGroup()"
+                        style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 10vw; margin-top: 2vh; margin-bottom: 2vh; align-self: center;">
+                            Voltar
+                    </button>
                 </div>
             </div>
         </div>

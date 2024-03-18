@@ -5,16 +5,20 @@ myApp.controller('loginController', function ($scope, $state, LoginService, Aler
     }
 
     const login = () => {
-        // $state.go('start-page');
-
         LoginService.login($scope.user)
             .then(resp => {
                 const user = resp.data;
                 localStorage.setItem('user_id', user.id);
-                localStorage.setItem('group_id', user.group_id);
-                localStorage.setItem('is_admin', user.is_admin);
-
-                $state.go('start-page');
+                
+                if (user.is_admin) {
+                    localStorage.setItem('is_admin', 1);
+                    $state.go('led-groups');
+                } else {
+                    localStorage.setItem('is_admin', 0);
+                    localStorage.setItem('group_id', user.group_id);
+                    $state.go('start-page');
+                }
+                
             })
             .catch(() => {
                 $scope.user.password = '';

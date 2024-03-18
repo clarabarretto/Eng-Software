@@ -2,23 +2,8 @@
     <header class="header">
         <img class="doxa-logo-header" src="../content/doxa-logo.svg">
         <div class="buttons-header">
-            <div class="dropdown">
-                <button
-                    style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;"
-                    class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Meus feedbacks
-                </button>
-                <ul style="border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
-                    class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" ui-sref="start-page">Feedback atual</a></li>
-                    <li><a class="dropdown-item" ui-sref="old-feedbacks">Feedback passado</a></li>
-                </ul>
-            </div>
-            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
-                style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
             <button class="buttons-header-item form-control btn btn-primary"
-                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                class="buttons-header-item  form-control btn btn-outline-light"
                 style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
                 ng-click="logOut()">Sair</button>
         </div>
@@ -28,33 +13,19 @@
         <div class="feedback-main-card"
             style="display: flex; justify-content: center; flex-direction: column; align-items: center; align-content: center;">
             <div style="display: flex; flex-direction: column; align-items: center;">
-                <a href="/client/html/grupo-adm.html">
-                    <div
-                        style="border-radius: 20px;background-color: #84ca555d; border-color: #83ca55; border-width: 2px; color: #456d39;border-style: solid; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 15vw; align-self: center; align-items: center; align-content: center; justify-content: center; display: flex; margin-top: 2vh;">
-                        <p style="color: #456d39; font-size: 15px; font-weight: bold; margin-top: 2vh;">Time bom</p>
-                    </div>
-                </a>
-
-                <a href="">
-                    <div
-                        style="border-radius: 20px;background-color: #84ca555d; border-color: #83ca55; border-width: 2px; color: #456d39;border-style: solid; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 15vw; align-self: center; align-items: center; align-content: center; justify-content: center; display: flex; margin-top: 2vh;">
-                        <p style="color: #456d39; font-size: 15px; font-weight: bold; margin-top: 2vh;">Time ok</p>
-                    </div>
-                </a>
-
-                <a href="">
+                <a ng-repeat="group in groups" ng-click="openGroup(group.id)" style="text-decoration: none; cursor: pointer;">
                     <div style=" border-radius: 20px;background-color: #84ca555d; border-color: #83ca55; border-width:
                             2px; color: #456d39;border-style: solid; font-weight: bold; padding-left: 20px;
                             padding-right: 20px; width: 15vw; align-self: center; align-items: center; align-content:
                             center; justify-content: center; display: flex; margin-top: 2vh;">
-                        <p style="color: #456d39; font-size: 15px; font-weight: bold; margin-top: 2vh;">Time ruim</p>
+                        <p style="color: #456d39; font-size: 15px; font-weight: bold; margin-top: 2vh;">{{ group.name }}</p>
                     </div>
                 </a>
 
             </div>
-            <button class="buttons-header-item  form-control btn" ui-sref="login"
+            <button class="buttons-header-item  form-control btn" ui-sref="create-group"
                 style=" border-radius: 20px;background-color: white; border-color: #456d39; border-width: 2px; color: #456d39; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 15vw; margin-bottom: 2vh; align-self: center; margin-top: 5vh;"
-                ng-click="logOut()">Criar novo grupo</button>
+                >Criar novo grupo</button>
         </div>
     </div>
 </div>

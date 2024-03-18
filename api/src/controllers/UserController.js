@@ -26,7 +26,7 @@ class UserController extends BaseController {
 
     async find(req, res) {
         try {
-            const response = await UserService.find(req.filter);
+            const response = await UserService.find(req.data);
 
             return this.handleResponse(res, response);
         } catch (error) {
