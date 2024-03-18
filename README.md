@@ -9,11 +9,15 @@ O objetivo deste projeto é criar uma plataforma de gestão de feedback pessoal 
 ## Como rodar :arrow_forward:
 Nossa aplicação utiliza npm para uma execução simplificada. É necessário apenas o node na sua máquina.
 
-Para rodar a aplicação utilize os seguintes comandos:
+Para rodar a aplicação utilize os seguintes comandos:  
 ``
  npm run dev
+ ``  
+ ``
  npm run start
 ``
+## Deploy 🌐
+- [Front](https://eng-software-blue.vercel.app/)
 
 ## Tecnologias utilizadas 🖱️
 - Angular.js
@@ -22,7 +26,7 @@ Para rodar a aplicação utilize os seguintes comandos:
 
 ## Documentos 📂
 - [Slides - Status Report](https://)
-- [Slides - Fina](https://)
+- [Slides - Final](https://)
 - [Documentação dos Testes](https://)
 
 ## Contribuidores 🤓
