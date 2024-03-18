@@ -25,27 +25,36 @@
     </header>
     <h1 class="feedback-page-title">Meus grupos:</h1>
     <div class="feedback-div">
-        <div class="feedback-main-card">
-            <div class="container-grid">
+        <div class="feedback-main-card"
+            style="display: flex; justify-content: center; flex-direction: column; align-items: center; align-content: center;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
                 <a href="/client/html/grupo-adm.html">
-                    <div class="card-grupo-grid">
-                        <p>Time bom</p>
+                    <div
+                        style="border-radius: 20px;background-color: #84ca555d; border-color: #83ca55; border-width: 2px; color: #456d39;border-style: solid; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 15vw; align-self: center; align-items: center; align-content: center; justify-content: center; display: flex; margin-top: 2vh;">
+                        <p style="color: #456d39; font-size: 15px; font-weight: bold; margin-top: 2vh;">Time bom</p>
                     </div>
                 </a>
 
                 <a href="">
-                    <div class="card-grupo-grid">
-                        <p>Time ok</p>
+                    <div
+                        style="border-radius: 20px;background-color: #84ca555d; border-color: #83ca55; border-width: 2px; color: #456d39;border-style: solid; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 15vw; align-self: center; align-items: center; align-content: center; justify-content: center; display: flex; margin-top: 2vh;">
+                        <p style="color: #456d39; font-size: 15px; font-weight: bold; margin-top: 2vh;">Time ok</p>
                     </div>
                 </a>
 
                 <a href="">
-                    <div class="card-grupo-grid">
-                        <p>Time ruim</p>
+                    <div style=" border-radius: 20px;background-color: #84ca555d; border-color: #83ca55; border-width:
+                            2px; color: #456d39;border-style: solid; font-weight: bold; padding-left: 20px;
+                            padding-right: 20px; width: 15vw; align-self: center; align-items: center; align-content:
+                            center; justify-content: center; display: flex; margin-top: 2vh;">
+                        <p style="color: #456d39; font-size: 15px; font-weight: bold; margin-top: 2vh;">Time ruim</p>
                     </div>
                 </a>
 
             </div>
+            <button class="buttons-header-item  form-control btn" ui-sref="login"
+                style=" border-radius: 20px;background-color: white; border-color: #456d39; border-width: 2px; color: #456d39; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 15vw; margin-bottom: 2vh; align-self: center; margin-top: 5vh;"
+                ng-click="logOut()">Criar novo grupo</button>
         </div>
     </div>
 </div>

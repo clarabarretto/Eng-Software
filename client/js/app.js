@@ -63,4 +63,16 @@ myApp.config(function ($stateProvider) {
             templateUrl: 'view/sign-up.html',
             controller: 'startPageController',
         })
+        .state({
+            name: 'add-user',
+            url: '/add-user',
+            templateUrl: 'view/add-users.html',
+            controller: 'startPageController',
+        })
+        .state({
+            name: 'create-group',
+            url: '/create-group',
+            templateUrl: 'view/create-group.html',
+            controller: 'startPageController',
+        })
 })  
