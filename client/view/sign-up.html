@@ -1,5 +1,5 @@
 <div class="mainDiv">
-    <div class="container-login" style="margin-top: 10vh; height: 80vh !important;">
+    <div class="container-login" style="margin-top: 5vh; height: 90vh !important;">
         <div class="login-form-container">
             <div class="doxa-logo-container-login">
                 <img class="doxa-logo" src="../content/doxa-logo.svg">
@@ -7,8 +7,7 @@
             <form class="form-login">
                 <div class="login-container-form-item">
                     <label for="name">Nome</label>
-                    <input class="form-control" type="text" ng-model="user.name" ng-required="true" ng-minlength="10"
-                        placeholder=""
+                    <input class="form-control" type="text" ng-model="user.name" ng-required="true"
                         style=" border-width: 3px; border-radius: 20px; border-color: #456d38; height: 5vh;" />
                 </div>
                 <div class="login-container-form-item">
@@ -30,14 +29,19 @@
                         style=" border-width: 3px; border-radius: 20px; border-color: #456d38; height: 5vh;" />
                 </div>
                 <div class="form-check" style="margin-top: 2vh;">
-                    <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1" ng-click="() => user.is_admin = !user.is_admin" ng-model="user.is_admin" ng-value="user.is_admin">
+                    <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1"  ng-model="user.is_admin" ng-value="user.is_admin" />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Sou administrador
                     </label>
                 </div>
-                <div>
+                <div style="display: flex; justify-content: center; flex-direction: column;">
                     <button class="btn btn-block login-btn" ng-click="signUp()"
-                        ng-disabled="!user.email || !user.password">Cadastrar</button>
+                        ng-disabled="!user.email || !user.password">Cadastrar
+                    </button>
+                    <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                        style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 10vw; margin-top: 2vh; margin-bottom: 2vh; align-self: center;">
+                            Voltar
+                    </button>
                 </div>
             </form>
         </div>
