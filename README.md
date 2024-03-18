@@ -9,19 +9,21 @@ O objetivo deste projeto é criar uma plataforma de gestão de feedback pessoal 
 ## Como rodar :arrow_forward:
 Nossa aplicação utiliza npm para uma execução simplificada. É necessário apenas o node na sua máquina.
 
-Para rodar a aplicação:
-Utilize os seguintes comandos:
-
+Para rodar a aplicação utilize os seguintes comandos:
+``
  npm run dev
  npm run start
+``
 
-## Tecnologias utilizadas
+## Tecnologias utilizadas 🖱️
 - Angular.js
 - Figma
 - Postgres
 
-## Documentação dos testes
-
+## Documentos 📂
+- [Slides - Status Report](https://)
+- [Slides - Fina](https://)
+- [Documentação dos Testes](https://)
 
 ## Contribuidores 🤓
  - Antonio Henrique
