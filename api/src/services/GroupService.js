@@ -1,9 +1,7 @@
-import { literal } from 'sequelize';
-
-import Group from '../models/Group';
-import Member from '../models/Member';
-import User from '../models/User';
-import Feedback from '../models/Feedback';
+import Group from '../models/Group.js';
+import Member from '../models/Member.js';
+import User from '../models/User.js';
+import Feedback from '../models/Feedback.js';
 
 class GroupService {
     getQueryOptions(filter) {
