@@ -42,16 +42,15 @@
                                 data
                             </th>
                         </tr>
-                        <!-- colocar link para acessar feedback e ng-repeats -->
-                        <tr>
+                        <tr ng-repeat="feedback in feedbacks">
                             <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
-                                teste
+                                {{ feedback.group.name }}
                             </td>
                             <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
-                                teste
+                                {{ feedback.group.admin.name }}
                             </td>
                             <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
-                                teste
+                                {{ feedback.created_at | date: DD/MM/YYYY }}
                             </td>
                         </tr>
                     </table>

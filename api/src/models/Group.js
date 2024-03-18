@@ -27,8 +27,8 @@ export default class Group extends Model {
             as: 'members'
         });
         this.belongsTo(models.User, { 
-            as: 'admin',
-            foreignKey: 'admin_id' 
+            foreignKey: 'admin_id',
+            as: 'admin'
         });
     }
 }

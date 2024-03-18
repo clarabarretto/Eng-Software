@@ -19,7 +19,7 @@ myApp.config(function ($stateProvider) {
             name: 'old-feedbacks',
             url: '/old-feedbacks',
             templateUrl: 'view/old-feedbacks.html',
-            controller: 'startPageController',
+            controller: 'oldFeedbacksController',
         })
         .state({
             name: 'specific-feedback',
@@ -31,7 +31,7 @@ myApp.config(function ($stateProvider) {
             name: 'my-groups',
             url: '/my-groups',
             templateUrl: 'view/my-groups.html',
-            controller: 'startPageController',
+            controller: 'groupController',
         })
         .state({
             name: 'led-groups',

@@ -28,11 +28,11 @@
             <div class="card-content" style="display: flex; flex-direction: column;">
                 <div>
                     <h1 class="card-text-title"> Grupo: </h1>
-                    <h4 class="card-text-content">BLA</h4>
+                    <h4 class="card-text-content">{{ group.name }}</h4>
                 </div>
                 <div>
                     <h1 class="card-text-title">Lider:</h1>
-                    <h4 class="card-text-content">BLA BLA</h1>
+                    <h4 class="card-text-content">{{ group.admin.name }}</h1>
                 </div>
             </div>
         </div>
@@ -42,11 +42,10 @@
                     <div class="div-every-feedback" style="display: flex; flex-direction: column;">
                         <h1 class="card-text-content">Integrantes:</h1>
                         <table class="table" style="margin-top: 2vh; width: 50vw;">
-                            <!-- ng-repeats -->
-                            <tr>
+                            <tr ng-repeat="member in group.members">
                                 <td class="td-item"
                                     style="font-weight: 500; font-size: 15px;color: #456d39; text-align: left;">
-                                    Nome 123
+                                    {{ member.User.name }}
                                 </td>
                             </tr>
                         </table>

@@ -24,10 +24,7 @@ class FeedbackController extends BaseController {
 
     async find(req, res) {
         try {
-            const response = await FeedbackService.find({
-                ...req.filter,
-                ...req.data
-            });
+            const response = await FeedbackService.find(req.data);
 
             return this.handleResponse(res, response);
         } catch (error) {

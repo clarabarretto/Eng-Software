@@ -15,9 +15,6 @@ const schema = {
         }).noUnknown()
     },
     find: {
-        params: yup.object({
-            id: yup.number().min(1).required()
-        }).noUnknown(),
         body: yup.object({
             user_id: yup.number().min(1).required(),
             group_id: yup.number().min(1).required(),
@@ -26,8 +23,7 @@ const schema = {
     },
     list: {
         params: yup.object({
-            user_id: yup.number().min(1).required(),
-            group_id: yup.number().min(1).required()
+            user_id: yup.number().min(1).required()
         }).noUnknown()
     },
     delete: {

@@ -1,5 +1,7 @@
 import Feedback from '../models/Feedback';
 import Skill from '../models/Skill';
+import Group from '../models/Group';
+import User from '../models/User';
 
 class FeedbackService {
     getAverageScore(skills) {
@@ -65,22 +67,13 @@ class FeedbackService {
 
     async find(filter, withSkills = true) {
         const queryOptions = {
-            where: {},
-            attributes: ['id', 'average_score', 'group_id', 'user_id', 'is_active']
-        };
-
-        if (filter.id) {
-            queryOptions.where = {
-                id: filter.id,
-                is_deleted: false
-            }
-        } else {
-            queryOptions.where = {
+            where: {
                 user_id: filter.user_id,
                 group_id: filter.group_id,
                 is_deleted: false
-            }
-        }
+            },
+            attributes: ['id', 'average_score', 'group_id', 'user_id', 'is_active']
+        };
 
         if (filter.is_active === false || filter.is_active) {
             queryOptions.where.is_active = filter.is_active
@@ -90,7 +83,7 @@ class FeedbackService {
             queryOptions.include = [
                 {
                     model: Skill,
-                    attributes: ['id', 'type', 'score'],
+                    attributes: ['id', 'type', 'title', 'score'],
                     as: 'skills'
                 }
             ]
@@ -105,12 +98,23 @@ class FeedbackService {
                 user_id: filter.user_id,
                 is_deleted: false
             },
-            attributes: ['id', 'average_score', 'user_id', 'group_id', 'is_active'],
+            attributes: ['id', 'average_score', 'user_id', 'group_id', 'is_active', 'created_at'],
             include: [
                 {
                     model: Skill,
                     attributes: ['id', 'type', 'score'],
                     as: 'skills'
+                }, {
+                    model: Group,
+                    attributes: ['id', 'name'],
+                    as: 'group',
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['id', 'name'],
+                            as: 'admin'
+                        }
+                    ]
                 }
             ]
         });

@@ -32,9 +32,8 @@
                         <h2 class="texto-media-atual">Desempenho médio</h2>
                     </div>
                     <div class="numero-media-atual">
-                        <p id="resultado-media">0.00</p>
+                        <p id="resultado-media">{{ feedback.average_score.toFixed(2) }}</p>
                         <p id="nota-maxima-comparacao">/ 5.00</p>
-                        <!-- <img src="/client/content/star.svg" alt="estrelas"> -->
                     </div>
                 </div>
                 <div class="green-line"></div>
@@ -42,43 +41,19 @@
                     <div class="skills-card">
                         <div class="skills-type-card">
                             <h3 class="texto-media-atual">Hard Skills</h3>
-                            <div class="skills-nota">
-                                <p>Skill 1:</p>
+                            <div class="skills-nota" ng-repeat="hardSkill in skills.hard">
+                                <p>{{ hardSkill.title }}:</p>
                                 <div class="text-skills">
-                                    <p>0.00</p>
-                                </div>
-                            </div>
-                            <div class="skills-nota">
-                                <p>Skill 2:</p>
-                                <div class="text-skills">
-                                    <p>0.00</p>
-                                </div>
-                            </div>
-                            <div class="skills-nota">
-                                <p>Skill 3:</p>
-                                <div class="text-skills">
-                                    <p>0.00</p>
+                                    <p>{{ hardSkill.score.toFixed(2) }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="skills-type-card">
                             <h3 class="texto-media-atual">Soft Skills</h3>
-                            <div class="skills-nota">
-                                <p>Skill 1:</p>
+                            <div class="skills-nota" ng-repeat="softSkill in skills.soft">
+                                <p>{{ softSkill.title }}:</p>
                                 <div class="text-skills">
-                                    <p>0.00</p>
-                                </div>
-                            </div>
-                            <div class="skills-nota">
-                                <p>Skill 2:</p>
-                                <div class="text-skills">
-                                    <p>0.00</p>
-                                </div>
-                            </div>
-                            <div class="skills-nota">
-                                <p>Skill 3:</p>
-                                <div class="text-skills">
-                                    <p>0.00</p>
+                                    <p>{{ softSkill.score.toFixed(2) }}</p>
                                 </div>
                             </div>
                         </div>

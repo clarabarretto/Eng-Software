@@ -27,6 +27,13 @@ class GroupService {
                     required: false,
                     attributes: ['id', 'name', 'email']
                 }]
+            }, {
+                model: User,
+                where: {
+                    is_deleted: false
+                },
+                attributes: ['id', 'name'],
+                as: 'admin'
             }],
             logging: true
         };
@@ -34,7 +41,6 @@ class GroupService {
 
     async find(filter) {
         const queryOptions = this.getQueryOptions(filter);
-        console.log(queryOptions, 'queryOptions');
 
         return Group.findOne(queryOptions);
     }
