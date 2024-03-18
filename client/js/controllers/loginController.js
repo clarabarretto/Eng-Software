@@ -3,21 +3,23 @@ myApp.controller('loginController', function ($scope, $state, LoginService, Aler
         email: '',
         password: ''
     }
-    
-    const login = () => {
-        LoginService.login($scope.user)
-            .then(resp => {
-                const user = resp.data;
-                localStorage.setItem('user', user);
-                localStorage.setItem('is_admin', user.is_admin);
 
-                $state.go('start-page');
-            })
-            .catch((error) => {
-                console.log(error);
-                $scope.user.password = '';
-                AlertMessage.error('Usuário não encontrado')
-        });
+    const login = () => {
+        $state.go('start-page');
+
+        // LoginService.login($scope.user)
+        //     .then(resp => {
+        //         const user = resp.data;
+        //         localStorage.setItem('user', user);
+        //         localStorage.setItem('is_admin', user.is_admin);
+
+        //         $state.go('start-page');
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //         $scope.user.password = '';
+        //         AlertMessage.error('Usuário não encontrado')
+        // });
     }
 
     $scope.login = login

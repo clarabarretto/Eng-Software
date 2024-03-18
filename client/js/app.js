@@ -57,4 +57,10 @@ myApp.config(function ($stateProvider) {
             templateUrl: 'view/show-user.html',
             controller: 'startPageController',
         })
+        .state({
+            name: 'sign-up',
+            url: '/sign-up',
+            templateUrl: 'view/sign-up.html',
+            controller: 'startPageController',
+        })
 })  
