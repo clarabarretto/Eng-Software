@@ -1,6 +1,6 @@
-import BaseController from './BaseController';
+import BaseController from './BaseController.js';
 
-import FeedbackService from '../services/FeedbackService';
+import FeedbackService from '../services/FeedbackService.js';
 
 class FeedbackController extends BaseController {
     constructor() {

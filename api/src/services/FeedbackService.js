@@ -1,7 +1,7 @@
-import Feedback from '../models/Feedback';
-import Skill from '../models/Skill';
-import Group from '../models/Group';
-import User from '../models/User';
+import Feedback from '../models/Feedback.js';
+import Skill from '../models/Skill.js';
+import Group from '../models/Group.js';
+import User from '../models/User.js';
 
 class FeedbackService {
     getAverageScore(skills) {
@@ -28,9 +28,9 @@ class FeedbackService {
                 Feedback.create({
                     ...filter,
                     average_score: this.getAverageScore(data.skills)
-                },{ transaction })
+                }, { transaction })
             ];
-    
+
             if (activeFeedBack) {
                 promises.push(
                     Feedback.update({
@@ -43,20 +43,20 @@ class FeedbackService {
                     })
                 );
             }
-    
+
             const [feedback, oldFeedBack] = await Promise.all(promises);
-            
+
             const skills = data.skills.map(skill => {
                 return {
                     ...skill,
                     feedback_id: feedback.id
                 };
             });
-    
+
             await Skill.bulkCreate(skills, { transaction });
 
             await transaction.commit();
-            
+
         } catch (error) {
             await transaction.rollback();
             throw error
@@ -135,7 +135,7 @@ class FeedbackService {
                     is_active: false
                 }, {
                     where: {
-                       id: feedback.id
+                        id: feedback.id
                     },
                     transaction
                 }),
@@ -148,7 +148,7 @@ class FeedbackService {
                     transaction
                 })
             ];
-    
+
             await Promise.all(promises);
 
             await transaction.commit();

@@ -1,15 +1,13 @@
-import './src/database';
-
 import env from 'dotenv';
 // import { resolve } from 'path';
 
 import express from 'express';
 import cors from 'cors';
 
-import UserRoutes from './src/routes/UserRoutes';
-import GroupRoutes from './src/routes/GroupRoute';
-import MemberRoutes from './src/routes/MemberRoute';
-import FeedbackRoutes from './src/routes/FeedbackRoute';
+import UserRoutes from './src/routes/UserRoutes.js';
+import GroupRoutes from './src/routes/GroupRoute.js';
+import MemberRoutes from './src/routes/MemberRoute.js';
+import FeedbackRoutes from './src/routes/FeedbackRoute.js';
 
 env.config();
 
@@ -34,7 +32,7 @@ class App {
         this.app.use('/members', MemberRoutes.setup());
         this.app.use('/feedbacks', FeedbackRoutes.setup());
     }
-    
+
     setup() {
         this.middlewares();
         this.routes();

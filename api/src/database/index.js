@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize');
 
-import User from '../models/User';
-import Group from '../models/Group';
-import Feedback from '../models/Feedback';
-import Member from '../models/Member';
-import Skill from '../models/Skill';
+import User from '../models/User.js';
+import Group from '../models/Group.js';
+import Feedback from '../models/Feedback.js';
+import Member from '../models/Member.js';
+import Skill from '../models/Skill.js';
 
 const databaseConfig = require('../config/database');
 

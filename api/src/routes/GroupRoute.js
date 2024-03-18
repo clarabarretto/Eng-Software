@@ -1,9 +1,9 @@
-import BaseRoute from './baseRoute';
-import GroupController from '../controllers/GroupController';
-import GroupSchema from '../schemas/GroupSchema';
+import BaseRoute from './baseRoute.js';
+import GroupController from '../controllers/GroupController.js';
+import GroupSchema from '../schemas/GroupSchema.js';
 
 class GroupRoutes extends BaseRoute {
-    setup(){
+    setup() {
         this.routes.post('/', this.schemaValidator.validate(GroupSchema.create), GroupController.create);
         this.routes.get('/', this.schemaValidator.validate(GroupSchema.list), GroupController.list);
         this.routes.get('/:id', this.schemaValidator.validate(GroupSchema.find), GroupController.find);

@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import User from "../models/User";
+import User from "../models/User.js";
 
 const validToken = async (req, res, next) => {
   const { authorization } = req.headers;
@@ -55,7 +55,7 @@ const isAdmin = async (req, res, next) => {
   }
 };
 
-module.exports = {
+export default {
   validToken,
   isAdmin,
 };

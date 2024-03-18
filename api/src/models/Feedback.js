@@ -25,15 +25,15 @@ export default class Feedback extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.User, { 
+        this.belongsTo(models.User, {
             foreignKey: 'user_id',
             as: 'user'
         });
-        this.belongsTo(models.Group, { 
+        this.belongsTo(models.Group, {
             foreignKey: 'group_id',
             as: 'group'
         });
-        this.hasMany(models.Skill, { 
+        this.hasMany(models.Skill, {
             foreignKey: 'feedback_id',
             as: 'skills'
         });

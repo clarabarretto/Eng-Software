@@ -1,6 +1,6 @@
-import Member from '../models/Member';
-import User from '../models/User';
-import Group from '../models/Group';
+import Member from '../models/Member.js';
+import User from '../models/User.js';
+import Group from '../models/Group.js';
 
 class MemberService {
     async create(filter) {
@@ -21,7 +21,7 @@ class MemberService {
             })
         ];
 
-        const [ user, group ] = await Promise.all(promises);
+        const [user, group] = await Promise.all(promises);
 
         if (!user || !group) {
             throw new Error('INVALID_REQUEST')
@@ -70,7 +70,7 @@ class MemberService {
         })
     }
 
-    async delete({ filter, changes }){
+    async delete({ filter, changes }) {
         await Member.update(changes, {
             where: {
                 id: filter.id

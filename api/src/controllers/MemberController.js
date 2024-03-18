@@ -1,6 +1,6 @@
-import BaseController from './BaseController';
+import BaseController from './BaseController.js';
 
-import MemberService from '../services/MemberService';
+import MemberService from '../services/MemberService.js';
 
 class MemberController extends BaseController {
     constructor() {

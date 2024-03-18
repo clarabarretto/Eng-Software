@@ -1,6 +1,6 @@
-import BaseController from './BaseController';
+import BaseController from './BaseController.js';
 
-import GroupService from '../services/GroupService';
+import GroupService from '../services/GroupService.js';
 
 class GroupController extends BaseController {
     constructor() {

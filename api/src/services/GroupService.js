@@ -1,14 +1,14 @@
 import { literal } from 'sequelize';
 
-import Group from '../models/Group';
-import Member from '../models/Member';
-import User from '../models/User';
+import Group from '../models/Group.js';
+import Member from '../models/Member.js';
+import User from '../models/User.js';
 
 class GroupService {
     getQueryOptions(filter) {
         return {
             where: {
-               ...filter
+                ...filter
             },
             attributes: ['id', 'name'],
             include: [{

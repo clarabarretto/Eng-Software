@@ -1,12 +1,12 @@
 import { literal } from 'sequelize';
-import User from '../models/User';
-import Member from '../models/Member';
+import User from '../models/User.js';
+import Member from '../models/Member.js';
 
 class UserService {
     getQueryOptions(filter) {
         return {
             where: {
-               ...filter
+                ...filter
             },
             attributes: ['id', 'name', 'email', 'is_admin']
         };
