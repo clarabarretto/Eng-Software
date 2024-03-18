@@ -1,5 +1,5 @@
 const myApp = angular.module("doxa", ['ui.router', 'ui.bootstrap']);
-const baseUrl = 'https://doxa-eng-software.onrender.com/'
+const baseUrl = 'https://doxa-eng-software.onrender.com'
 
 myApp.config(function ($stateProvider) {
     $stateProvider
