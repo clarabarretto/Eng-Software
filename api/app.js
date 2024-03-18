@@ -1,3 +1,5 @@
+import './src/database/index.js';
+
 import env from 'dotenv';
 // import { resolve } from 'path';
 
