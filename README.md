@@ -25,9 +25,9 @@ Para rodar a aplicação utilize os seguintes comandos:
 - Postgres
 
 ## Documentos 📂
-- [Slides - Status Report](https://)
+- [Slides - Status Report](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Status%20Report.pdf)
 - [Slides - Final](https://)
-- [Documentação dos Testes](https://)
+- [Documentação dos Testes](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Testes%20-%20Doxa.pdf)
 
 ## Deploys
 Front: https://eng-software-blue.vercel.app/
