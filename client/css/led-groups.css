@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(15, 6.9vw);
+    justify-content: center;
+}
+
+.card-group-item {
+    padding: 2vh;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}

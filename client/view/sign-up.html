@@ -1,0 +1,39 @@
+<div class="mainDiv">
+    <div class="container-login" style="margin-top: 10vh;">
+        <div class="login-form-container">
+            <div class="doxa-logo-container-login">
+                <img class="doxa-logo" src="../content/doxa-logo.svg">
+            </div>
+            <form class="form-login">
+                <div class="login-container-form-item">
+                    <label for="email">E-mail</label>
+                    <input class="form-control" type="text" ng-model="user.email" ng-required="true" ng-minlength="10"
+                        placeholder=""
+                        style=" border-width: 3px; border-radius: 20px; border-color: #456d38; height: 5vh;" />
+                </div>
+                <div class="login-container-form-item">
+                    <label for="password">Senha</label>
+                    <input id="login-input" class="form-control" type="password" ng-model="user.password"
+                        ng-minlength="6" ng-required="true" placeholder=""
+                        style=" border-width: 3px; border-radius: 20px; border-color: #456d38; height: 5vh;" />
+                </div>
+                <div class="login-container-form-item">
+                    <label for="password">Confirmar senha</label>
+                    <input id="login-input" class="form-control" type="password" ng-model="user.password"
+                        ng-minlength="6" ng-required="true" placeholder=""
+                        style=" border-width: 3px; border-radius: 20px; border-color: #456d38; height: 5vh;" />
+                </div>
+                <div class="form-check" style="margin-top: 2vh;">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sou administrador
+                    </label>
+                </div>
+                <div>
+                    <button class="btn btn-block login-btn" ng-click="login()"
+                        ng-disabled="!user.email || !user.password">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

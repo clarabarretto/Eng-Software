@@ -4,11 +4,12 @@ import env from 'dotenv';
 // import { resolve } from 'path';
 
 import express from 'express';
-// import cors from 'cors';
+import cors from 'cors';
 
 import UserRoutes from './src/routes/UserRoutes';
 import GroupRoutes from './src/routes/GroupRoute';
 import MemberRoutes from './src/routes/MemberRoute';
+import FeedbackRoutes from './src/routes/FeedbackRoute';
 
 env.config();
 
@@ -20,8 +21,7 @@ class App {
     }
 
     middlewares() {
-        // this.app.use(express.static(resolve(__dirname, 'uploads')));
-        // this.app.use(cors());
+        this.app.use(cors());
         this.app.use(express.json({ limit: "100mb" }));
         this.app.use(express.text({ limit: "100mb" }));
         this.app.use(express.urlencoded({ limit: "100mb", extended: true }));
@@ -32,6 +32,7 @@ class App {
         this.app.use('/users', UserRoutes.setup());
         this.app.use('/groups', GroupRoutes.setup());
         this.app.use('/members', MemberRoutes.setup());
+        this.app.use('/feedbacks', FeedbackRoutes.setup());
     }
     
     setup() {

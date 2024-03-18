@@ -1,0 +1,100 @@
+<div>
+    <header class="header">
+        <img class="doxa-logo-header" src="../content/doxa-logo.svg">
+        <div class="buttons-header">
+            <div class="dropdown">
+                <button
+                    style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;"
+                    class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Meus feedbacks
+                </button>
+                <ul style="border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                    class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" ui-sref="start-page">Feedback atual</a></li>
+                    <li><a class="dropdown-item" ui-sref="old-feedbacks">Feedback passado</a></li>
+                </ul>
+            </div>
+            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
+                style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
+            <button class="buttons-header-item form-control btn btn-primary"
+                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                ng-click="logOut()">Sair</button>
+        </div>
+    </header>
+    <div class="feedback-div" style="margin-top: 4vh;">
+        <div class="feedback-main-card">
+            <div class="card-content" style="flex-direction: column;">
+                <div style="display: flex;flex-direction: column;align-items: center; margin-bottom: 3vh;">
+                    <h1 class="card-text-content">Integrante:</h1>
+                    <h1 class="card-text-content">Grupo:</h1>
+                </div>
+                <div style="display: contents;">
+                    <div style=" display: flex; 
+                        flex-direction: row;
+                        gap: 10vw;
+                        justify-content: center;
+                        align-items: center;">
+                        <div class="skills-type-card" style="height: 30vh;">
+                            <h3 class="texto-media-atual">Hard Skills</h3>
+                            <div class="skills-nota">
+                                <p>Skill 1:</p>
+                                <div class="text-skills">
+                                    <input
+                                        style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
+                                        type="text" value="0.00">
+                                </div>
+                            </div>
+                            <div class="skills-nota">
+                                <p>Skill 2:</p>
+                                <div class="text-skills">
+                                    <input
+                                        style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
+                                        type="text" value="0.00">
+                                </div>
+                            </div>
+                            <div class="skills-nota">
+                                <p>Skill 3:</p>
+                                <div class="text-skills">
+                                    <input
+                                        style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
+                                        type="text" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-type-card" style="height: 30vh;">
+                            <h3 class="texto-media-atual">Soft Skills</h3>
+                            <div class="skills-nota">
+                                <p>Skill 1:</p>
+                                <div class="text-skills">
+                                    <input
+                                        style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
+                                        type="text" value="0.00">
+                                </div>
+                            </div>
+                            <div class="skills-nota">
+                                <p>Skill 2:</p>
+                                <div class="text-skills">
+                                    <input
+                                        style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
+                                        type="text" value="0.00">
+                                </div>
+                            </div>
+                            <div class="skills-nota">
+                                <p>Skill 3:</p>
+                                <div class="text-skills">
+                                    <input
+                                        style="border-radius: 20px; border-color: #83ca55; border-width: 3px; color: #456d39; text-align:center; border-style: solid;"
+                                        type="text" value="0.00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                        style=" border-radius: 20px;background-color: #84ca555d; border-color: #83ca55; border-width: 2px; color: #456d39; font-weight: bold; padding-left: 20px; padding-right: 20px; width: 10vw; margin-top: 4.5vh; margin-bottom: 2vh; align-self: center;"
+                        ng-click="logOut()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,90 @@
+<div>
+    <header class="header">
+        <img class="doxa-logo-header" src="../content/doxa-logo.svg">
+        <div class="buttons-header">
+            <div class="dropdown">
+                <button
+                    style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;"
+                    class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Meus feedbacks
+                </button>
+                <ul style="border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                    class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" ui-sref="start-page">Feedback atual</a></li>
+                    <li><a class="dropdown-item" ui-sref="old-feedbacks">Feedback passado</a></li>
+                </ul>
+            </div>
+            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
+                style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
+            <button class="buttons-header-item form-control btn btn-primary"
+                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                ng-click="logOut()">Sair</button>
+        </div>
+    </header>
+    <h1 class="feedback-page-title">Feedback atual:</h1>
+    <div class="feedback-div">
+        <div class="feedback-main-card">
+            <div class="card-content">
+                <div class="media-atual">
+                    <div>
+                        <h2 class="texto-media-atual">Desempenho médio</h2>
+                    </div>
+                    <div class="numero-media-atual">
+                        <p id="resultado-media">0.00</p>
+                        <p id="nota-maxima-comparacao">/ 5.00</p>
+                        <!-- <img src="/client/content/star.svg" alt="estrelas"> -->
+                    </div>
+                </div>
+                <div class="green-line"></div>
+                <div class="notas-atuais">
+                    <div class="skills-card">
+                        <div class="skills-type-card">
+                            <h3 class="texto-media-atual">Hard Skills</h3>
+                            <div class="skills-nota">
+                                <p>Skill 1:</p>
+                                <div class="text-skills">
+                                    <p>0.00</p>
+                                </div>
+                            </div>
+                            <div class="skills-nota">
+                                <p>Skill 2:</p>
+                                <div class="text-skills">
+                                    <p>0.00</p>
+                                </div>
+                            </div>
+                            <div class="skills-nota">
+                                <p>Skill 3:</p>
+                                <div class="text-skills">
+                                    <p>0.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-type-card">
+                            <h3 class="texto-media-atual">Soft Skills</h3>
+                            <div class="skills-nota">
+                                <p>Skill 1:</p>
+                                <div class="text-skills">
+                                    <p>0.00</p>
+                                </div>
+                            </div>
+                            <div class="skills-nota">
+                                <p>Skill 2:</p>
+                                <div class="text-skills">
+                                    <p>0.00</p>
+                                </div>
+                            </div>
+                            <div class="skills-nota">
+                                <p>Skill 3:</p>
+                                <div class="text-skills">
+                                    <p>0.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

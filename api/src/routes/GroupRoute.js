@@ -10,8 +10,6 @@ class GroupRoutes extends BaseRoute {
         this.routes.put('/:id', this.schemaValidator.validate(GroupSchema.update), GroupController.update);
         this.routes.delete('/:id', this.schemaValidator.validate(GroupSchema.find), GroupController.delete);
 
-        // this.routes.use(this.LoginRequired)
-
         return this.routes
     }
 }

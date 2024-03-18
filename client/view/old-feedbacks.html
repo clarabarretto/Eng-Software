@@ -1,0 +1,62 @@
+<div>
+    <header class="header">
+        <img class="doxa-logo-header" src="../content/doxa-logo.svg">
+        <div class="buttons-header">
+            <div class="dropdown">
+                <button
+                    style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;"
+                    class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Meus feedbacks
+                </button>
+                <ul style="border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                    class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" ui-sref="start-page">Feedback atual</a></li>
+                    <li><a class="dropdown-item">Feedback passado</a></li>
+                </ul>
+            </div>
+            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
+                style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
+            <button class="buttons-header-item form-control btn btn-primary"
+                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                ng-click="logOut()">Sair</button>
+        </div>
+    </header>
+    <h1 class="feedback-page-title">Feedbacks anteriores:</h1>
+    <div class="feedback-div">
+        <div class="feedback-main-card">
+            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="comparative"
+                style="background-color: #84ca5557; border-radius: 20px; border-width: 3px; border-color: #83ca55;color:#84ca55; font-weight: bold;width: 12vw; margin-left: 65vw; margin-top: 2vh;">Ver
+                comparativo</button>
+            <div class="old-feedbacks-card-content">
+                <div class="div-every-feedback">
+                    <table class="table table-bordered"
+                        style="border-color: #456d3981; border-style: solid; border-width: 0.5px; margin-top: 2vh;">
+                        <tr>
+                            <th class="table-header-item" style="font-weight: bold; font-size: 15px;color: #456d39">
+                                grupo</th>
+                            <th class="table-header-item" style="font-weight: bold; font-size: 15px;color: #456d39">
+                                lider</th>
+                            <th class="table-header-item" style="font-weight: bold; font-size: 15px;color: #456d39">
+                                data
+                            </th>
+                        </tr>
+                        <!-- colocar link para acessar feedback e ng-repeats -->
+                        <tr>
+                            <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
+                                teste
+                            </td>
+                            <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
+                                teste
+                            </td>
+                            <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
+                                teste
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
