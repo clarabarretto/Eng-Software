@@ -6,20 +6,16 @@ Este repositório é dedicado ao desenvolvimento de um software cujo a finalidad
 ## Objetivo 🗿🍷
 O objetivo deste projeto é criar uma plataforma de gestão de feedback pessoal entre os intregantes de uma equipe de trabalho. 
 
-## Regras de Negócio
-- Para que um integrante possa acessar sua conta é necessário que ele já esteja em algum grupo.
-- Ao realizar um feedback é necessário que todas as Skills sejam preenchidas.
-- Um usuário só pode ser integrante de um grupo, já um líder pode liderar várias equipes ao mesmo tempo.
-
 ## Como rodar :arrow_forward:
 Nossa aplicação utiliza npm para uma execução simplificada. É necessário apenas o node na sua máquina.
 
 Para rodar a aplicação utilize os seguintes comandos:  
+- Após instalar as dependências `npm i`, esses são os comandos necessários para rodar localmente a aplicação
 ``
- npm run dev
+ api: npm run dev
  ``  
  ``
- npm run start
+ front: npm run start
 ``
 ## Deploy 🌐
 - [Link do projeto: ](https://eng-software-blue.vercel.app/)
@@ -35,11 +31,14 @@ Para rodar a aplicação utilize os seguintes comandos:
 - Figma
 
 ## Documentos 📂
+- [Vídeo no Youtube](https://youtu.be/PCGBTQjJydY)
+- [Vídeo](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Interface%20-%20Doxa.mp4)
+
 - [Slides - Status Report](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Status%20Report.pdf)
 - [Slides - Final](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Engenharia%20de%20Software.pdf)
+
 - [Documentação dos Testes](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Testes%20-%20Doxa.pdf)
-- [Vídeo](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Interface%20-%20Doxa.mp4)
-- [Vídeo no Youtube](https://youtu.be/PCGBTQjJydY)
+- [Documentação das Funcionalidades](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Funcionalidades%20e%20Regras%20de%20Neg%C3%B3cio.pdf)
 
 ## Contribuidores 🤓
  - Antonio Henrique - ahsl@cin.ufpe.br
