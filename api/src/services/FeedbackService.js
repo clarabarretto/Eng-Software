@@ -69,8 +69,7 @@ class FeedbackService {
         const queryOptions = {
             where: {
                 user_id: filter.user_id,
-                group_id: filter.group_id,
-                is_deleted: false
+                group_id: filter.group_id
             },
             attributes: ['id', 'average_score', 'group_id', 'user_id', 'is_active']
         };
