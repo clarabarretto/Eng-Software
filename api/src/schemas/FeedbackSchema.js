@@ -16,6 +16,7 @@ const schema = {
     },
     find: {
         body: yup.object({
+            id: yup.number().min(1),
             user_id: yup.number().min(1).required(),
             group_id: yup.number().min(1).required(),
             is_active: yup.boolean().nullable()

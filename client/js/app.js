@@ -27,7 +27,7 @@ myApp.config(function ($stateProvider) {
             name: 'specific-feedback',
             url: '/specific-feedback',
             templateUrl: 'view/specific-feedback.html',
-            controller: 'startPageController',
+            controller: 'specificFeedbackController',
             onEnter: isAuthorized
         })
         .state({

@@ -12,5 +12,22 @@ myApp.controller('oldFeedbacksController', function ($scope, $state, FeedbackSer
             })
     }
 
+    const openSpecifFeedback = feedback => {
+        localStorage.setItem('specific_feedback_id', feedback.id);
+        localStorage.setItem('specific_feedback_group_name', feedback.group.name);
+        localStorage.setItem('specific_feedback_group_admin_name', feedback.group.admin.name);
+        localStorage.setItem('specific_feedback_date', feedback.created_at);
+
+        $state.go('specific-feedback');
+    };
+
+    const logOut = () => {
+        localStorage.clear();
+        $state.go('login');
+    };
+
     getFeedbacks();
+
+    $scope.openSpecifFeedback = openSpecifFeedback;
+    $scope.logOut = logOut;
 });

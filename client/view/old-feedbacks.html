@@ -18,7 +18,7 @@
             <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
                 style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
             <button class="buttons-header-item form-control btn btn-primary"
-                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                class="buttons-header-item  form-control btn btn-outline-light"
                 style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
                 ng-click="logOut()">Sair</button>
         </div>
@@ -39,7 +39,7 @@
                                 data
                             </th>
                         </tr>
-                        <tr ng-repeat="feedback in feedbacks">
+                        <tr ng-repeat="feedback in feedbacks" ng-click="openSpecifFeedback(feedback)" style="cursor: pointer;">
                             <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
                                 {{ feedback.group.name }}
                             </td>

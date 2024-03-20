@@ -79,6 +79,10 @@ class FeedbackService {
             queryOptions.where.is_active = filter.is_active
         }
 
+        if (filter.id) {
+            queryOptions.where.id = filter.id;
+        }
+
         if (withSkills) {
             queryOptions.include = [
                 {

@@ -2,25 +2,16 @@
     <header class="header">
         <img class="doxa-logo-header" src="../content/doxa-logo.svg">
         <div class="buttons-header">
-            <div class="dropdown">
-                <button
-                    style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;"
-                    class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Meus feedbacks
-                </button>
-                <ul style="border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
-                    class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" ui-sref="start-page">Feedback atual</a></li>
-                    <li><a class="dropdown-item">Feedback passado</a></li>
-                </ul>
-            </div>
-            <button class="buttons-header-item  form-control btn btn-outline-light" ui-sref="my-groups"
-                style="background-color: #83ca55; border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; margin-right: 10px;">Grupos</button>
             <button class="buttons-header-item form-control btn btn-primary"
-                class="buttons-header-item  form-control btn btn-outline-light" ui-sref="login"
+                class="buttons-header-item  form-control btn btn-outline-light"
                 style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
-                ng-click="logOut()">Sair</button>
+                ng-click="goBackToOldFeedbacks()">voltar
+            </button>
+            <button class="buttons-header-item form-control btn btn-primary"
+                class="buttons-header-item  form-control btn btn-outline-light"
+                style=" border-radius: 20px; border-color: black; border-width: 2px; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px;"
+                ng-click="logOut()">Sair
+            </button>
         </div>
     </header>
     <div class="specific-feedback-table-div">
@@ -37,13 +28,13 @@
             </tr>
             <tr>
                 <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
-                    teste
+                    {{ data.group_name }}
                 </td>
                 <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
-                    teste
+                    {{ data.admin_name }}
                 </td>
                 <td class="td-item" style="font-weight: 500; font-size: 15px;color: #456d39">
-                    teste
+                    {{ data.feedback_date | date: DD/MM/YYYY }}
                 </td>
             </tr>
         </table>
@@ -56,9 +47,8 @@
                         <h2 class="texto-media-atual">Desempenho médio</h2>
                     </div>
                     <div class="numero-media-atual">
-                        <p id="resultado-media">0.00</p>
+                        <p id="resultado-media">{{ feedback.average_score.toFixed(2) }}</p>
                         <p id="nota-maxima-comparacao">/ 5.00</p>
-                        <!-- <img src="/client/content/star.svg" alt="estrelas"> -->
                     </div>
                 </div>
                 <div class="green-line"></div>
@@ -66,43 +56,19 @@
                     <div class="skills-card">
                         <div class="skills-type-card">
                             <h3 class="texto-media-atual">Hard Skills</h3>
-                            <div class="skills-nota">
-                                <p>Skill 1:</p>
+                            <div class="skills-nota" ng-repeat="hardSkill in skills.hard">
+                                <p>{{ hardSkill.title }}:</p>
                                 <div class="text-skills">
-                                    <p>0.00</p>
-                                </div>
-                            </div>
-                            <div class="skills-nota">
-                                <p>Skill 2:</p>
-                                <div class="text-skills">
-                                    <p>0.00</p>
-                                </div>
-                            </div>
-                            <div class="skills-nota">
-                                <p>Skill 3:</p>
-                                <div class="text-skills">
-                                    <p>0.00</p>
+                                    <p>{{ hardSkill.score.toFixed(2) }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="skills-type-card">
                             <h3 class="texto-media-atual">Soft Skills</h3>
-                            <div class="skills-nota">
-                                <p>Skill 1:</p>
+                            <div class="skills-nota" ng-repeat="softSkill in skills.soft">
+                                <p>{{ softSkill.title }}:</p>
                                 <div class="text-skills">
-                                    <p>0.00</p>
-                                </div>
-                            </div>
-                            <div class="skills-nota">
-                                <p>Skill 2:</p>
-                                <div class="text-skills">
-                                    <p>0.00</p>
-                                </div>
-                            </div>
-                            <div class="skills-nota">
-                                <p>Skill 3:</p>
-                                <div class="text-skills">
-                                    <p>0.00</p>
+                                    <p>{{ softSkill.score.toFixed(2) }}</p>
                                 </div>
                             </div>
                         </div>

@@ -4,7 +4,7 @@ myApp.controller('giveFeedbackController', function ($scope, $state, FeedbackSer
         user_name: localStorage.getItem('feedback_user_name'),
     };
 
-    $scope.data = {
+    $scope.baseData = {
         user_id: localStorage.getItem('feedback_user_id'),
         group_id: localStorage.getItem('group_id'),
         skills: {
@@ -41,10 +41,14 @@ myApp.controller('giveFeedbackController', function ($scope, $state, FeedbackSer
         }
     };
 
-    const mountData = data => {
-        const skills = Object.values(data.skills);
+    $scope.data =  angular.copy($scope.baseData);
 
-        data.skills = skills;
+    const mountData = feedback => {
+        const data = {
+            group_id: feedback.group_id,
+            user_id: feedback.user_id,
+            skills: Object.values(data.skills)
+        };
 
         return data;
     }
@@ -55,8 +59,9 @@ myApp.controller('giveFeedbackController', function ($scope, $state, FeedbackSer
         return FeedbackService.create(mountedData)
             .then(() => {
                 AlertMessage.success('FeedbackCriado com sucesso');
-                goBackToLedGroup();
-            }).catch(() => AlertMessage.error('Algo deu errado ao criar o feedback'))
+            }).catch(() => {
+                AlertMessage.error('Algo deu errado ao criar o feedback');
+            }).finally(() => goBackToLedGroup());
     }
 
     const logOut = () => {
