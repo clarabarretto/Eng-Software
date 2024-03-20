@@ -98,8 +98,7 @@ class FeedbackService {
     async list(filter) {
         return Feedback.findAll({
             where: {
-                user_id: filter.user_id,
-                is_deleted: false
+                user_id: filter.user_id
             },
             attributes: ['id', 'average_score', 'user_id', 'group_id', 'is_active', 'created_at'],
             include: [

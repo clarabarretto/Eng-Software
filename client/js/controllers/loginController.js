@@ -15,7 +15,13 @@ myApp.controller('loginController', function ($scope, $state, LoginService, Aler
                     $state.go('led-groups');
                 } else {
                     localStorage.setItem('is_admin', 0);
-                    localStorage.setItem('group_id', user.group_id);
+
+                    if (user.group_id) {
+                        localStorage.setItem('group_id', user.group_id);
+                    } else {
+                        localStorage.setItem('group_id', 0);
+                    }
+
                     $state.go('start-page');
                 }
                 

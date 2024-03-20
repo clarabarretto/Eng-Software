@@ -13,6 +13,7 @@ myApp.controller('specificFeedbackController', function ($scope, $state, Feedbac
     const goBackToOldFeedbacks = () => {
         localStorage.removeItem('specific_feedback_id');
         localStorage.removeItem('specific_feedback_group_name');
+        localStorage.removeItem('specific_feedback_group_id');
         localStorage.removeItem('specific_feedback_group_admin_name');
         localStorage.removeItem('specific_feedback_date');
 
@@ -22,7 +23,7 @@ myApp.controller('specificFeedbackController', function ($scope, $state, Feedbac
     const getFeedback = () => {
         const filter = {
             id: localStorage.getItem('specific_feedback_id'),
-            group_id: localStorage.getItem('group_id'),
+            group_id: localStorage.getItem('specific_feedback_group_id'),
             user_id: localStorage.getItem('user_id')
         };
 

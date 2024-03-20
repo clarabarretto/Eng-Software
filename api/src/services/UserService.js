@@ -88,11 +88,13 @@ class UserService {
                 attributes: ['group_id']
             });
 
-            const parsedUser = await this.find({ id: user.id });
-
-            return {
-                ...parsedUser.toJSON(),
-                group_id: member.group_id
+            if (member) {
+                const parsedUser = await this.find({ id: user.id });
+    
+                return {
+                    ...parsedUser.toJSON(),
+                    group_id: member.group_id
+                }
             }
         }
 

@@ -8,6 +8,6 @@ myApp.service("FeedbackService", function ($http) {
     }
 
     this.list = data => {
-        return $http.get(`${baseUrl}/feedbacks/${data.user_id}`, );
+        return $http.get(`${baseUrl}/feedbacks/${data.user_id}`);
     }
 });

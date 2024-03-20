@@ -6,6 +6,10 @@ myApp.controller('startPageController', function ($scope, $state, FeedbackServic
             is_active: true
         };
 
+        if (~~filter.group_id === 0) {
+            return $scope.feedback = null;
+        }
+
         return FeedbackService.find(filter)
             .then(resp => {
                 $scope.feedback = resp.data;
