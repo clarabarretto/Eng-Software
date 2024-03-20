@@ -37,12 +37,12 @@ Para rodar a aplicação utilize os seguintes comandos:
 - [Vídeo no Youtube](https://youtu.be/PCGBTQjJydY)
 
 ## Contribuidores 🤓
- - Antonio Henrique
- - Gabriel Aragão
- - Geydson Renan
- - Mariana Amorim
- - Maria Clara Barretto
- - Rodrigo Barbosa
+ - Antonio Henrique - ahsl@cin.ufpe.br
+ - Gabriel Aragão - gaca@cin.ufpe.br
+ - Geydson Renan - grml@cin.ufpe.br
+ - Mariana Amorim - mrbsa@cin.ufpe.br
+ - Maria Clara Barretto - mcfgb@cin.ufpe.br
+ - Rodrigo Barbosa - rbo3@cin.ufpe.br
 
 ## Professor 📏
  - Vinicius Cardoso Garcia
