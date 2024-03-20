@@ -33,8 +33,8 @@ Para rodar a aplicação utilize os seguintes comandos:
 - [Slides - Status Report](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Status%20Report.pdf)
 - [Slides - Final](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Engenharia%20de%20Software.pdf)
 - [Documentação dos Testes](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Testes%20-%20Doxa.pdf)
-- [Screencast]
-- [Trello]
+- [Vídeo](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Interface%20-%20Doxa.mp4)
+- [Vídeo no Youtube]()
 
 ## Contribuidores 🤓
  - Antonio Henrique
