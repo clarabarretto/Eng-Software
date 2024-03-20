@@ -47,7 +47,7 @@ myApp.controller('giveFeedbackController', function ($scope, $state, FeedbackSer
         const data = {
             group_id: feedback.group_id,
             user_id: feedback.user_id,
-            skills: Object.values(data.skills)
+            skills: Object.values($scope.data.skills)
         };
 
         return data;

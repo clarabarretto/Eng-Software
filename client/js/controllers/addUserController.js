@@ -4,7 +4,6 @@ myApp.controller('addUserController', function ($scope, $state, UserService, Ale
     };
 
     const addUser = () => {
-        console.log($scope.user);
         return UserService.findUserByEmail($scope.user)
             .then(resp => {
                 const user = resp.data;
