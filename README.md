@@ -26,7 +26,7 @@ Para rodar a aplicação utilize os seguintes comandos:
 
 ## Documentos 📂
 - [Slides - Status Report](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Status%20Report.pdf)
-- [Slides - Final](https://)
+- [Slides - Final](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Engenharia%20de%20Software.pdf)
 - [Documentação dos Testes](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Testes%20-%20Doxa.pdf)
 
 ## Contribuidores 🤓
