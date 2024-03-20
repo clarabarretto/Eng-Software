@@ -6,6 +6,10 @@ Este repositório é dedicado ao desenvolvimento de um software cujo a finalidad
 ## Objetivo 🗿🍷
 O objetivo deste projeto é criar uma plataforma de gestão de feedback pessoal entre os intregantes de uma equipe de trabalho. 
 
+
+## Regra de Negócio
+Para que um integrante possa acessar sua conta é necessário que ele já esteja em algum grupo.
+
 ## Como rodar :arrow_forward:
 Nossa aplicação utiliza npm para uma execução simplificada. É necessário apenas o node na sua máquina.
 
