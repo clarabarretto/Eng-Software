@@ -17,17 +17,24 @@ Para rodar a aplicação utilize os seguintes comandos:
  npm run start
 ``
 ## Deploy 🌐
-- [Front](https://eng-software-blue.vercel.app/)
+- [Link do projeto: ](https://eng-software-blue.vercel.app/)
+
+- Front: Vercel
+- Back: Render
+- Banco: Elephant
 
 ## Tecnologias utilizadas 🖱️
 - Angular.js
+- Node.js
+- Sequelize
 - Figma
-- Postgres
 
 ## Documentos 📂
 - [Slides - Status Report](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Status%20Report.pdf)
 - [Slides - Final](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Doxa%20-%20Engenharia%20de%20Software.pdf)
 - [Documentação dos Testes](https://github.com/clarabarretto/Eng-Software/blob/main/documents/Testes%20-%20Doxa.pdf)
+- [Screencast]
+- [Trello]
 
 ## Contribuidores 🤓
  - Antonio Henrique
