@@ -6,9 +6,10 @@ Este repositório é dedicado ao desenvolvimento de um software cujo a finalidad
 ## Objetivo 🗿🍷
 O objetivo deste projeto é criar uma plataforma de gestão de feedback pessoal entre os intregantes de uma equipe de trabalho. 
 
-
-## Regra de Negócio
-Para que um integrante possa acessar sua conta é necessário que ele já esteja em algum grupo.
+## Regras de Negócio
+- Para que um integrante possa acessar sua conta é necessário que ele já esteja em algum grupo.
+- Ao realizar um feedback é necessário que todas as Skills sejam preenchidas.
+- Um usuário só pode ser integrante de um grupo, já um líder pode liderar várias equipes ao mesmo tempo.
 
 ## Como rodar :arrow_forward:
 Nossa aplicação utiliza npm para uma execução simplificada. É necessário apenas o node na sua máquina.
