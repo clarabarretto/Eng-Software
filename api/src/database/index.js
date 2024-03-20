@@ -14,7 +14,7 @@ const databaseConfig = require('../config/database');
 
 const models = [User, Group, Feedback, Skill, Member];
 
-const connection = new Sequelize(databaseConfig);
+const connection = new Sequelize(databaseConfig.url, databaseConfig);
 
 models.forEach((model) => model.init(connection));
 models.forEach((model) => model.associate && model.associate(connection.models));
